@@ -8,20 +8,29 @@
 		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
 		<title lang="en"><![CDATA[XFire Mod]]></title>
 		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
-		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.  Happy New Year!! :)]]></author-notes>
+		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.]]></author-notes>
 		<author-group>
+			<author>
+				<realname><![CDATA[Tyler]]></realname>
+				<username><![CDATA[bprsk8r4272]]></username>
+				<homepage><![CDATA[http://gotskillslounge.com]]></homepage>
+				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
+			</author>
 			<author>
 				<realname><![CDATA[Richard McGirr]]></realname>
 				<username><![CDATA[RMcGirr83]]></username>
 				<homepage><![CDATA[http://rmcgirr83.org]]></homepage>
 				<email><![CDATA[rmcgirr83@rmcgirr83.org]]></email>
+				<contributions-group>
+					<contributions status="past" from="2008-12-31" to="2009-03-02" position="Origional Author"/>
+				</contributions-group>
 			</author>
 		</author-group>
-		<mod-version>1.0.3</mod-version>
+		<mod-version>1.0.4</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1200</time>
-			<target-version>3.0.4</target-version>
+			<target-version>3.0.9</target-version>
 		</installation>
 		<history>
 			<entry>
@@ -35,7 +44,7 @@
 				<date>2009-01-08</date>
 				<rev-version>1.0.1</rev-version>
 				<changelog lang="en">
-					<change><![CDATA[Added ability to select styling of mini-profile for xfire]]></change>
+					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
 				</changelog>
 			</entry>
 			<entry>
@@ -57,6 +66,13 @@
 				<rev-version>1.0.3</rev-version>
 				<changelog lang="en">
 					<change><![CDATA[Added db_update file, no more phpmyadmin.  Added FAQ entry.  MODx 1.2.2 HTML changes]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2011-08-26</date>
+				<rev-version>1.0.4</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
 				</changelog>
 			</entry>
 		</history>
@@ -333,6 +349,7 @@ $user->add_lang('mods/xfire');
 				<action type="after-add"><![CDATA[.xfire-icon, .xfire-icon a			{ background-image: url("{IMG_ICON_CONTACT_XFIRE_SRC}"); }]]></action>
 			</edit>
 		</open>
+		<php-installer><![CDATA[db_update.php]]></php-installer>
 		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, browse to the db_update.php file.  Once run, delete the file, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>
 	</action-group>
 </mod>

@@ -11,17 +11,26 @@
 		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.  Happy New Year!! :)]]></author-notes>
 		<author-group>
 			<author>
+				<realname><![CDATA[Tyler]]></realname>
+				<username><![CDATA[bprsk8r4272]]></username>
+				<homepage><![CDATA[http://gotskillslounge.com]]></homepage>
+				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
+			</author>
+			<author>
 				<realname><![CDATA[Richard McGirr]]></realname>
 				<username><![CDATA[RMcGirr83]]></username>
 				<homepage><![CDATA[http://rmcgirr83.org]]></homepage>
 				<email><![CDATA[rmcgirr83@rmcgirr83.org]]></email>
+				<contributions-group>
+					<contributions status="past" from="2008-12-31" to="2009-03-02" position="Origional Author"/>
+				</contributions-group>
 			</author>
 		</author-group>
-		<mod-version>1.0.3</mod-version>
+		<mod-version>1.0.4</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1200</time>
-			<target-version>3.0.4</target-version>
+			<target-version>3.0.9</target-version>
 		</installation>
 		<history>
 			<entry>
@@ -57,6 +66,13 @@
 				<rev-version>1.0.3</rev-version>
 				<changelog lang="en">
 					<change><![CDATA[Added db_update file, no more phpmyadmin.  Added FAQ entry.  MODx 1.2.2 HTML changes]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2011-08-26</date>
+				<rev-version>1.0.4</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
 				</changelog>
 			</entry>
 		</history>
