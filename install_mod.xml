@@ -179,7 +179,8 @@ $user->add_lang('mods/xfire');
 		</open>
 		<open src="includes/acp/acp_styles.php">
 			<edit>
-				<find><![CDATA[			'buttons'	=> array(]]></find>
+				<find><![CDATA[			'buttons'	=> array(
+				'icon_back_top']]></find>
 				<inline-edit>
 					<inline-find><![CDATA[, 'icon_contact_www']]></inline-find>
 					<inline-action type="after-add"><![CDATA[, 'icon_contact_xfire']]></inline-action>

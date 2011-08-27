@@ -64,5 +64,3 @@ if (!defined('XFIRE_WO'))
 {
 	define('XFIRE_WO', 'wow');
 }
-
-?>
