@@ -8,7 +8,7 @@
 		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
 		<title lang="en"><![CDATA[XFire Mod]]></title>
 		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
-		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.  Happy New Year!! :)]]></author-notes>
+		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.]]></author-notes>
 		<author-group>
 			<author>
 				<realname><![CDATA[Tyler]]></realname>
@@ -41,17 +41,17 @@
 				</changelog>
 			</entry>
 			<entry>
-				<date>2009-01-08</date>
-				<rev-version>1.0.1</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
-				</changelog>
-			</entry>
-			<entry>
 				<date>2009-01-09</date>
 				<rev-version>1.0.1a</rev-version>
 				<changelog lang="en">
 					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-08</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
 				</changelog>
 			</entry>
 			<entry>
@@ -81,6 +81,9 @@
 		</link-group>
 	</header>
 	<action-group>
+		<copy>
+			<file from="root/styles/subsilver2/imageset/en/icon_contact_xfire.gif" to="styles/subsilver2/imageset/en/icon_contact_xfire.gif"/>
+		</copy>
 		<open src="styles/subsilver2/imageset/en/imageset.cfg">
 			<edit>
 				<find><![CDATA[img_icon_contact_msnm = icon_contact_msnm.gif]]></find>
@@ -128,10 +131,12 @@
 		</open>
 		<open src="styles/subsilver2/template/viewtopic_body.html">
 			<edit>
-				<find><![CDATA[&nbsp;<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{PROFILE_IMG}</a> <!-- ENDIF -->]]></find>
-				<action type="after-add"><![CDATA[ <!-- IF postrow.U_XFIRE and S_USER_LOGGED_IN --><a href="http://profile.xfire.com/{postrow.U_XFIRE}">{XFIRE_IMG}</a> <!-- ENDIF -->]]></action>
+				<find><![CDATA[			<td><div class="gensmall" style="float: {S_CONTENT_FLOW_BEGIN};">&nbsp;<!-- IF postrow.U_POST_AUTHOR -->]]></find>
+				<inline-edit>
+					<inline-find><![CDATA[&nbsp;<!-- IF postrow.U_POST_AUTHOR --><a href="{postrow.U_POST_AUTHOR}">{PROFILE_IMG}</a> <!-- ENDIF -->]]></inline-find>
+					<inline-action type="after-add"><![CDATA[ <!-- IF postrow.U_XFIRE and S_USER_LOGGED_IN --><a href="http://profile.xfire.com/{postrow.U_XFIRE}">{XFIRE_IMG}</a> <!-- ENDIF -->]]></inline-action>
+				</inline-edit>
 			</edit>
 		</open>
-		<diy-instructions lang="en"><![CDATA[Purge the cache and regenerate the template files!!]]></diy-instructions>
 	</action-group>
 </mod>

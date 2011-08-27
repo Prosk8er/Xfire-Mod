@@ -41,17 +41,17 @@
 				</changelog>
 			</entry>
 			<entry>
-				<date>2009-01-08</date>
-				<rev-version>1.0.1</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
-				</changelog>
-			</entry>
-			<entry>
 				<date>2009-01-09</date>
 				<rev-version>1.0.1a</rev-version>
 				<changelog lang="en">
 					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-08</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
 				</changelog>
 			</entry>
 			<entry>
