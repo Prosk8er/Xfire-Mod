@@ -1,9 +1,10 @@
 <?php
 /**
 *
-* @package phpBB3
-* @version $Id: xfire_mod.php,v 1.1 2009/03/01 13:27:49 rmcgirr83 Exp $
-* @copyright (c) Rich McGirr
+* @author Prosk8er (Tyler) prosk8er@gotskillslounge.com
+* @package Xfire Mod
+* @version $Id: xfire_mod.php 104 2011-08-26 12:30:00Z Prosk8er $
+* @copyright (c) 2011 Prosk8er ( http://www.gotskillslounge.com/ )
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
 */
@@ -15,6 +16,7 @@ if (!defined('IN_PHPBB'))
 {
 	exit;
 }
+
 // define constants used in user cp
 if (!defined('XFIRE_SHADOW'))
 {

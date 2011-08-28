@@ -82,17 +82,19 @@
 	</header>
 	<action-group>
 		<copy>
+			<file from="root/language/en/mods/info_acp_xfire.php" to="language/en/mods/info_acp_xfire.php"/>
 			<file from="root/language/en/mods/xfire.php" to="language/en/mods/xfire.php"/>
-			<file from="root/includes/xfire_mod.php" to="includes/xfire_mod.php"/>
+			<file from="root/includes/mods/xfire_mod.php" to="includes/mods/xfire_mod.php"/>
 			<file from="root/styles/prosilver/imageset/icon_contact_xfire.gif" to="styles/prosilver/imageset/icon_contact_xfire.gif"/>
-			<file from="root/db_update.php" to="db_update.php"/>
+			<file from="root/umil/*.*" to="umil/*.*"/>
+			<file from="root/xfire_install.php" to="xfire_install.php"/>
 		</copy>
 		<open src="memberlist.php">
 			<edit>
 				<find><![CDATA[$user->setup(array('memberlist',]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 $user->add_lang('mods/xfire');
-include($phpbb_root_path . 'includes/xfire_mod.' . $phpEx);
+include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 //END xfire mod]]></action>
 			</edit>
 			<edit>
@@ -147,7 +149,7 @@ $user->add_lang('mods/xfire');
 // END xfire mod]]></action>
 			</edit>
 			<edit>
-				<find><![CDATA[	'msn'				=> '',]]></find>
+				<find><![CDATA[				'msn'				=> '',]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 				'xfire'			=> '',
 // END xfire mod]]></action>
@@ -189,9 +191,9 @@ $user->add_lang('mods/xfire');
 		</open>
 		<open src="includes/acp/acp_users.php">
 			<edit>
-				<find><![CDATA[case 'profile':]]></find>
-				<find><![CDATA[$cp = new custom_profile();]]></find>
-				<action type="after-add"><![CDATA[// xfire mod
+				<find><![CDATA[			case 'profile':]]></find>
+				<find><![CDATA[				$cp = new custom_profile();]]></find>
+				<action type="after-add"><![CDATA[				// xfire mod
 		 $user->add_lang('mods/xfire');]]></action>
 			</edit>
 			<edit>
@@ -279,7 +281,7 @@ $user->add_lang('mods/xfire');
 		</open>
 		<open src="styles/prosilver/template/memberlist_view.html">
 			<edit>
-				<find><![CDATA[		<!-- IF SIGNATURE -->]]></find>
+				<find><![CDATA[<!-- IF SIGNATURE -->]]></find>
 				<action type="before-add"><![CDATA[<!-- IF XFIRE -->
 <div class="panel bg1">
 	<div class="inner"><span class="corners-top"><span></span></span>
@@ -301,8 +303,8 @@ $user->add_lang('mods/xfire');
 				<action type="after-add"><![CDATA[	<dl>
 		<dt><label for="xfire">{L_XFIRE}:</label><br /><span>{XFIRE_EXPLAIN}</span></dt>
 		<dd><input type="text" name="xfire" id="xfire" maxlength="25" value="{XFIRE}" class="inputbox" /></dd>
-    </dl>
-    <dl>
+	</dl>
+	<dl>
 		<dt><label for="xfire_explain">{L_XFIRE_STYLE}:</label><br /><span>{L_XFIRE_STYLE_EXPLAIN}</span></dt>
 		<dd>
 			<label for="xfire_style1"><input type="radio" name="xfire_style" id="xfire_style1" value="1" style="margin: 2px;"<!-- IF XFIRE_STYLE eq 1 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_SHADOW}</label>
@@ -350,7 +352,7 @@ $user->add_lang('mods/xfire');
 				<action type="after-add"><![CDATA[.xfire-icon, .xfire-icon a			{ background-image: url("{IMG_ICON_CONTACT_XFIRE_SRC}"); }]]></action>
 			</edit>
 		</open>
-		<php-installer><![CDATA[db_update.php]]></php-installer>
-		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, browse to the db_update.php file.  Once run, delete the file, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>
+		<php-installer><![CDATA[xfire_install.php]]></php-installer>
+		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, browse to the xfire_install.php file.  Once run, delete the file, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>
 	</action-group>
 </mod>
