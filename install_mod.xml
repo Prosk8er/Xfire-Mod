@@ -78,6 +78,8 @@
 		</history>
 		<link-group>
 			<link type="template" href="./contrib/subsilver2.xml" lang="en">subsilver2</link>
+			<link type="contrib" href="./contrib/required_by_registration/install_mod.xml" lang="en">Required By Registration</link>
+			<link type="contrib" href="./contrib/xfire_viewmessage/install_mod.xml" lang="en">Xfire Mod for viewmessage</link>
 		</link-group>
 	</header>
 	<action-group>
