@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD.\nAlthough MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD.\nNo support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.phpbb.com/mods/xml/modx-1.2.5.xsd">
+	<header>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
+		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
+		<title lang="en"><![CDATA[XFire Mod Update 1.0.3 to 1.0.4]]></title>
+		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
+		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.]]></author-notes>
+		<author-group>
+			<author>
+				<realname><![CDATA[Tyler]]></realname>
+				<username><![CDATA[bprsk8r4272]]></username>
+				<homepage><![CDATA[http://gotskillslounge.com]]></homepage>
+				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
+			</author>
+			<author>
+				<realname><![CDATA[Richard McGirr]]></realname>
+				<username><![CDATA[RMcGirr83]]></username>
+				<homepage><![CDATA[http://rmcgirr83.org]]></homepage>
+				<email><![CDATA[rmcgirr83@rmcgirr83.org]]></email>
+				<contributions-group>
+					<contributions status="past" from="2008-12-31" to="2009-03-02" position="Origional Author"/>
+				</contributions-group>
+			</author>
+		</author-group>
+		<mod-version>1.0.4</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>1200</time>
+			<target-version>3.0.9</target-version>
+		</installation>
+		<history>
+			<entry>
+				<date>2008-12-31</date>
+				<rev-version>1.0.0</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Initial Release]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-09</date>
+				<rev-version>1.0.1a</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-08</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-14</date>
+				<rev-version>1.0.2</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Tightened up code for ucp_profile.php and html file]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-02</date>
+				<rev-version>1.0.3</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added db_update file, no more phpmyadmin.  Added FAQ entry.  MODx 1.2.2 HTML changes]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2011-08-26</date>
+				<rev-version>1.0.4</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
+				</changelog>
+			</entry>
+		</history>
+	</header>
+	<action-group>
+		<copy>
+			<file from="root/language/en/mods/info_acp_xfire.php" to="language/en/mods/info_acp_xfire.php"/>
+			<file from="root/language/en/mods/xfire.php" to="language/en/mods/xfire.php"/>
+			<file from="root/includes/mods/xfire_mod.php" to="includes/mods/xfire_mod.php"/>
+			<file from="root/styles/prosilver/imageset/icon_contact_xfire.gif" to="styles/prosilver/imageset/icon_contact_xfire.gif"/>
+			<file from="root/umil/*.*" to="umil/*.*"/>
+			<file from="root/xfire_install.php" to="xfire_install.php"/>
+			<file from="root/styles/subsilver2/imageset/en/icon_contact_xfire.gif" to="styles/subsilver2/imageset/en/icon_contact_xfire.gif"/>
+		</copy>
+		<delete>
+			<file name="includes/xfire_mod.php"/>
+			<file name="images/xfire_mini.gif"/>
+		</delete>
+		<open src="memberlist.php">
+			<edit>
+				<find><![CDATA[// BEGIN xfire mod
+$user->add_lang('mods/xfire');
+include($phpbb_root_path . 'includes/xfire_mod.' . $phpEx);
+//END xfire mod]]></find>
+				<action type="replace-with"><![CDATA[// BEGIN xfire mod
+$user->add_lang('mods/xfire');
+include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
+//END xfire mod]]></action>
+			</edit>
+		</open>
+		<open src="viewtopic.php">
+			<edit>
+				<find><![CDATA[	'MSN_IMG' 			=> $user->img('icon_contact_msnm', 'MSNM'),]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+	'XFIRE_IMG' 		=> $user->img('icon_contact_xfire', 'XFIRE'),
+// END xfire mod]]></action>
+			</edit>
+		</open>
+		<open src="includes/acp/acp_styles.php">
+			<edit>
+				<find><![CDATA[			'buttons'	=> array(
+				'icon_back_top']]></find>
+				<inline-edit>
+					<inline-find><![CDATA[, 'icon_contact_www']]></inline-find>
+					<inline-action type="after-add"><![CDATA[, 'icon_contact_xfire']]></inline-action>
+				</inline-edit>
+			</edit>
+		</open>
+		<open src="styles/prosilver/imageset/imageset.cfg">
+			<edit>
+				<find><![CDATA[img_icon_contact_msnm = icon_contact_msnm.gif*20*20]]></find>
+				<action type="after-add"><![CDATA[img_icon_contact_xfire = icon_contact_xfire.gif*20*20]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/viewtopic_body.html">
+			<edit>
+				<find><![CDATA[ 					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://profile.xfire.com/{postrow.U_XFIRE}"><img src="./images/xfire_mini.gif" style="height: 16px; width:16px; margin:2px;" alt="{L_XFIRE}: {postrow.U_XFIRE}" title="{L_XFIRE}: {postrow.U_XFIRE}" /></a></li><!-- ENDIF -->]]></find>
+				<action type="replace-with"><![CDATA[  					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://profile.xfire.com/{postrow.U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/theme/buttons.css">
+			<edit>
+				<find><![CDATA[ul.profile-icons li.msnm-icon	{ width: {IMG_ICON_CONTACT_MSNM_WIDTH}px; height: {IMG_ICON_CONTACT_MSNM_HEIGHT}px; }]]></find>
+				<action type="after-add"><![CDATA[ul.profile-icons li.xfire-icon	{ width: {IMG_ICON_CONTACT_XFIRE_WIDTH}px; height: {IMG_ICON_CONTACT_XFIRE_HEIGHT}px; }]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/theme/colours.css">
+			<edit>
+				<find><![CDATA[.msnm-icon, .msnm-icon a			{ background-image: url("{IMG_ICON_CONTACT_MSNM_SRC}"); }]]></find>
+				<action type="after-add"><![CDATA[.xfire-icon, .xfire-icon a			{ background-image: url("{IMG_ICON_CONTACT_XFIRE_SRC}"); }]]></action>
+			</edit>
+		</open>
+		<open src="styles/subsilver2/imageset/en/imageset.cfg">
+			<edit>
+				<find><![CDATA[img_icon_contact_msnm = icon_contact_msnm.gif]]></find>
+				<action type="after-add"><![CDATA[img_icon_contact_xfire = icon_contact_xfire.gif]]></action>
+			</edit>
+		</open>
+		<open src="styles/subsilver2/template/viewtopic_body.html">
+			<edit>
+				<find><![CDATA[<!-- IF postrow.U_XFIRE and S_USER_LOGGED_IN -->&nbsp;<a href="http://profile.xfire.com/{postrow.U_XFIRE}"><img src="./images/xfire_mini.gif" width="16" height="16" alt="{L_XFIRE}: {postrow.U_XFIRE}" title="{L_XFIRE}: {postrow.U_XFIRE}" /></a><!-- ENDIF -->]]></find>
+				<action type="replace-with"><![CDATA[<!-- IF postrow.U_XFIRE and S_USER_LOGGED_IN --><a href="http://profile.xfire.com/{postrow.U_XFIRE}">{XFIRE_IMG}</a> <!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+		<php-installer><![CDATA[xfire_install.php]]></php-installer>
+		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, browse to the xfire_install.php file.  Once run, delete the file, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>
+	</action-group>
+</mod>
