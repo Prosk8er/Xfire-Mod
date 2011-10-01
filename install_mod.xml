@@ -78,6 +78,7 @@
 		</history>
 		<link-group>
 			<link type="template" href="./contrib/subsilver2.xml" lang="en">subsilver2</link>
+			<link type="contrib" href="./contrib/update_103_to_104/install_mod.xml" lang="en">Update 1.0.3 to 1.0.4</link>
 			<link type="contrib" href="./contrib/required_by_registration/install_mod.xml" lang="en">Required By Registration</link>
 			<link type="contrib" href="./contrib/xfire_status_on_viewmessage/install_mod.xml" lang="en">Xfire Mod status on viewmessage</link>
 			<link type="contrib" href="./contrib/xfire_status_on_viewtopic/install_mod.xml" lang="en">Xfire Mod status on viewtopic</link>
