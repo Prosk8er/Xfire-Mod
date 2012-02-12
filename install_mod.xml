@@ -34,31 +34,10 @@
 		</installation>
 		<history>
 			<entry>
-				<date>2008-12-31</date>
-				<rev-version>1.0.0</rev-version>
+				<date>2011-08-26</date>
+				<rev-version>1.0.4</rev-version>
 				<changelog lang="en">
-					<change><![CDATA[Initial Release]]></change>
-				</changelog>
-			</entry>
-			<entry>
-				<date>2009-01-09</date>
-				<rev-version>1.0.1a</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
-				</changelog>
-			</entry>
-			<entry>
-				<date>2009-01-08</date>
-				<rev-version>1.0.1</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
-				</changelog>
-			</entry>
-			<entry>
-				<date>2009-01-14</date>
-				<rev-version>1.0.2</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Tightened up code for ucp_profile.php and html file]]></change>
+					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
 				</changelog>
 			</entry>
 			<entry>
@@ -69,10 +48,31 @@
 				</changelog>
 			</entry>
 			<entry>
-				<date>2011-08-26</date>
-				<rev-version>1.0.4</rev-version>
+				<date>2009-01-14</date>
+				<rev-version>1.0.2</rev-version>
 				<changelog lang="en">
-					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
+					<change><![CDATA[Tightened up code for ucp_profile.php and html file]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-08</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-09</date>
+				<rev-version>1.0.1a</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2008-12-31</date>
+				<rev-version>1.0.0</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Initial Release]]></change>
 				</changelog>
 			</entry>
 		</history>
@@ -150,7 +150,7 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[	'MSN_IMG' 			=> $user->img('icon_contact_msnm', 'MSNM'),]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-	'XFIRE_IMG' 		=> $user->img('icon_contact_xfire', 'XFIRE'),
+	'XFIRE_IMG' 			=> $user->img('icon_contact_xfire', 'XFIRE'),
 // END xfire mod]]></action>
 			</edit>
 			<edit>
@@ -162,13 +162,13 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[				'msn'			=> ($row['user_msnm'] && $auth->acl_get('u_sendim')) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", "mode=contact&amp;action=msnm&amp;u=$poster_id") : '',]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-        		'xfire'		=> ($row['user_xfire'] && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
+				'xfire'			=> ($row['user_xfire'] && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
 //END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[		'U_MSN'			=> $user_cache[$poster_id]['msn'],]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-        'U_XFIRE'		=> $user_cache[$poster_id]['xfire'],
+		'U_XFIRE'			=> $user_cache[$poster_id]['xfire'],
 //END xfire mod]]></action>
 			</edit>
 		</open>
@@ -199,7 +199,7 @@ $user->add_lang('mods/xfire');
 				<find><![CDATA[			case 'profile':]]></find>
 				<find><![CDATA[				$cp = new custom_profile();]]></find>
 				<action type="after-add"><![CDATA[				// xfire mod
-		 $user->add_lang('mods/xfire');]]></action>
+				$user->add_lang('mods/xfire');]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[					'msn'			=> request_var('msn', $user_row['user_msnm']),]]></find>
@@ -209,12 +209,12 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[						'msn'			=> array('string', true, 5, 255),]]></find>
 				<action type="after-add"><![CDATA[						// xfire mod
-						'xfire'		=> array('string', true, 4, 25),]]></action>
+						'xfire'			=> array('string', true, 4, 25),]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[							'user_msnm'		=> $data['msn'],]]></find>
 				<action type="after-add"><![CDATA[							// xfire mod
-							'user_xfire'	       => $data['xfire'],]]></action>
+							'user_xfire'		=> $data['xfire'],]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[					'MSN'			=> $data['msn'],]]></find>
@@ -226,7 +226,7 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[				$cp_data = $cp_error = array();]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-				$user->add_lang('mods/xfire');				
+				$user->add_lang('mods/xfire');
 //END xfire mod]]></action>
 			</edit>
 			<edit>
@@ -239,13 +239,13 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[						'msn'			=> array('string', true, 5, 255),]]></find>
 				<action type="after-add"><![CDATA[//BEGIN xfire mod
-						'xfire'                 => array('string', true, 4, 25),
+						'xfire'			=> array('string', true, 4, 25),
 //END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[							'user_msnm'		=> $data['msn'],]]></find>
 				<action type="after-add"><![CDATA[//BEGIN xfire mod
-							'user_xfire'            => $data['xfire'],
+							'user_xfire'		=> $data['xfire'],
 							'user_xfire_style'      => $data['xfire_style'],
 //END xfire mod]]></action>
 			</edit>
