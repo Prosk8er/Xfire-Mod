@@ -67,6 +67,9 @@
 				</changelog>
 			</entry>
 		</history>
+		<link-group>
+			<link type="parent" href="../../install_mod.xml" lang="en">Main install file</link>
+		</link-group>
 	</header>
 	<action-group>
 		<open src="styles/prosilver/template/viewtopic_body.html">

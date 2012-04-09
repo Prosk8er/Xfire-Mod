@@ -100,7 +100,7 @@
 		<tr>
 			<td class="row1" colspan="2">
 				<div class="postbody">
-					<div class="xfire" style="border-top:none; margin-top: 0;"><a href="http://profile.xfire.com/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> &bull; <a href="http://www.xfire.com/download/">{L_DOWNLOAD_XFIRE}</a></div></div>
+					<div class="xfire" style="border-top:none; margin-top: 0;"><a href="http://profile.xfire.com/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> &bull; <a href="http://www.xfire.com/download/">{L_DOWNLOAD_XFIRE}</a></div></div>
 				</div>
 			</td>
 		</tr>

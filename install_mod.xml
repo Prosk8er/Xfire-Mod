@@ -106,26 +106,26 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 				<find><![CDATA[case 'viewprofile':]]></find>
 				<find><![CDATA[$template->assign_vars(array(]]></find>
 				<action type="before-add"><![CDATA[		//BEGIN xfire mod
-		if($member['user_xfire'])
+		if ($member['user_xfire'])
 		{
 			$xfire_style = XFIRE_BG;
-			if($member['user_xfire_style'] == XFIRE_SHADOW)
+			if ($member['user_xfire_style'] == XFIRE_SHADOW)
 			{
 				$xfire_style = XFIRE_SH;
 			}
-			elseif($member['user_xfire_style'] == XFIRE_COMBAT)
+			elseif ($member['user_xfire_style'] == XFIRE_COMBAT)
 			{
 				$xfire_style = XFIRE_CO;
 			}
-			elseif($member['user_xfire_style'] == XFIRE_SCIFI)
+			elseif ($member['user_xfire_style'] == XFIRE_SCIFI)
 			{
 				$xfire_style = XFIRE_SF;
 			}
-			elseif($member['user_xfire_style'] == XFIRE_FANTASY)
+			elseif ($member['user_xfire_style'] == XFIRE_FANTASY)
 			{
 				$xfire_style = XFIRE_OS;
 			}
-			elseif($member['user_xfire_style'] == XFIRE_WOW)
+			elseif ($member['user_xfire_style'] == XFIRE_WOW)
 			{
 				$xfire_style = XFIRE_WO;
 			}
@@ -292,7 +292,7 @@ $user->add_lang('mods/xfire');
 	<div class="inner"><span class="corners-top"><span></span></span>
 		<h3>{L_XFIRE}</h3>
 		<div class="postbody">
-			<div class="xfire" style="border-top:none; margin-top: 0;"><a href="http://profile.xfire.com/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> | <a href="http://www.xfire.com/download/">{L_DOWNLOAD_XFIRE}</a></div></div>
+			<div class="xfire" style="border-top:none; margin-top: 0;"><a href="http://profile.xfire.com/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> | <a href="http://www.xfire.com/download/">{L_DOWNLOAD_XFIRE}</a></div></div>
 		</div>
 	<span class="corners-bottom"><span></span></span></div>
 </div>
