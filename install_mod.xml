@@ -269,7 +269,7 @@ $user->add_lang('mods/xfire');
 	),
 	array(
 		0 => 'What is XFire?',
-		1 => '<a href="http://www.xfire.com">XFire</a> is a free gaming tool that automatically keeps track of when and where gamers are playing PC games online and lets their friends join them easily. It doesn\'t matter which online game your friends are playing, which server browser they are using, or which gaming service they\'re playing on; Xfire is intelligent enough to recognize where your friends are at any time.',
+		1 => '<a href="http://www.xfire.com">XFire</a> is a free gaming tool that automatically keeps track of when and where gamers are playing PC games online and lets their friends join them easily. It doesn't matter which online game your friends are playing, which server browser they are using, or which gaming service they're playing on; Xfire is intelligent enough to recognize where your friends are at any time.',
 	),
 	array(
 		0 => 'How can I add users to my XFire account?',
