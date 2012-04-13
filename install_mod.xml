@@ -106,7 +106,7 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 				<find><![CDATA[case 'viewprofile':]]></find>
 				<find><![CDATA[$template->assign_vars(array(]]></find>
 				<action type="before-add"><![CDATA[		//BEGIN xfire mod
-		if ($member['user_xfire'])
+		if (!empty($member['user_xfire']))
 		{
 			$xfire_style = XFIRE_BG;
 			if ($member['user_xfire_style'] == XFIRE_SHADOW)
@@ -162,7 +162,7 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[				'msn'			=> ($row['user_msnm'] && $auth->acl_get('u_sendim')) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", "mode=contact&amp;action=msnm&amp;u=$poster_id") : '',]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-				'xfire'			=> ($row['user_xfire'] && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
+				'xfire'			=> (isset($row['user_xfire']) && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
 //END xfire mod]]></action>
 			</edit>
 			<edit>
@@ -204,7 +204,7 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[					'msn'			=> request_var('msn', $user_row['user_msnm']),]]></find>
 				<action type="after-add"><![CDATA[					// xfire mod
-					'xfire'			=> strtolower(request_var('xfire', $user_row['user_xfire'])),]]></action>
+					'xfire'			=> (isset($user_row['user_xfire'])) ? strtolower(request_var('xfire', $user_row['user_xfire'])) : '',]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[						'msn'			=> array('string', true, 5, 255),]]></find>
@@ -232,7 +232,7 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[					'msn'			=> request_var('msn', $user->data['user_msnm']),]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-					'xfire'                 => strtolower(request_var('xfire', $user->data['user_xfire'])),
+					'xfire'                 => (isset($user_row['user_xfire'])) ? strtolower(request_var('xfire', $user_row['user_xfire'])) : '',
 					'xfire_style'           => request_var('xfire_style', $user->data['user_xfire_style']),
 //END xfire mod]]></action>
 			</edit>
@@ -255,7 +255,6 @@ $user->add_lang('mods/xfire');
 					'XFIRE'			=> $data['xfire'],
 					'XFIRE_STYLE'		=> $data['xfire_style'],
 					'XFIRE_EXPLAIN'		=> sprintf($user->lang['XFIRE_EXPLAIN'], '<a href="' . append_sid("{$phpbb_root_path}faq.$phpEx") . '">', '</a>'),
-					'XFIRE_STYLE_EXPLAIN'	=> $user->lang['XFIRE_STYLE_EXPLAIN'],
 //END xfire mod]]></action>
 			</edit>
 		</open>
@@ -269,7 +268,7 @@ $user->add_lang('mods/xfire');
 	),
 	array(
 		0 => 'What is XFire?',
-		1 => '<a href="http://www.xfire.com">XFire</a> is a free gaming tool that automatically keeps track of when and where gamers are playing PC games online and lets their friends join them easily. It doesn't matter which online game your friends are playing, which server browser they are using, or which gaming service they're playing on; Xfire is intelligent enough to recognize where your friends are at any time.',
+		1 => '<a href="http://www.xfire.com">XFire</a> is a free gaming tool that automatically keeps track of when and where gamers are playing PC games online and lets their friends join them easily. It doesn’t matter which online game your friends are playing, which server browser they are using, or which gaming service they’re playing on; Xfire is intelligent enough to recognize where your friends are at any time.',
 	),
 	array(
 		0 => 'How can I add users to my XFire account?',
@@ -310,7 +309,7 @@ $user->add_lang('mods/xfire');
 		<dd><input type="text" name="xfire" id="xfire" maxlength="25" value="{XFIRE}" class="inputbox" /></dd>
 	</dl>
 	<dl>
-		<dt><label for="xfire_explain">{L_XFIRE_STYLE}:</label><br /><span>{L_XFIRE_STYLE_EXPLAIN}</span></dt>
+		<dt>{L_XFIRE_STYLE}:<br /><span>{L_XFIRE_STYLE_EXPLAIN}</span></dt>
 		<dd>
 			<label for="xfire_style1"><input type="radio" name="xfire_style" id="xfire_style1" value="1" style="margin: 2px;"<!-- IF XFIRE_STYLE eq 1 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_SHADOW}</label>
 			<label for="xfire_style2"><input type="radio" name="xfire_style" id="xfire_style2" value="2" style="margin: 2px;"<!-- IF XFIRE_STYLE eq 2 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_COMBAT}</label>

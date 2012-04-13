@@ -128,7 +128,7 @@
 		<dd><input type="text" name="xfire" id="xfire" size="25" maxlength="25" value="{XFIRE}" class="inputbox autowidth" title="{L_XFIRE}" /></dd>
 	</dl>
 	<dl>
-		<dt><label for="xfire_explain">{L_XFIRE_STYLE}:</label><br /><span>{L_XFIRE_STYLE_EXPLAIN}</span></dt>
+		<dt>{L_XFIRE_STYLE}:<br /><span>{L_XFIRE_STYLE_EXPLAIN}</span></dt>
 		<dd>
 			<label for="xfire_style1"><input type="radio" name="xfire_style" id="xfire_style1" value="1" style="margin: 2px;"<!-- IF XFIRE_STYLE eq 1 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_SHADOW}</label>
 			<label for="xfire_style2"><input type="radio" name="xfire_style" id="xfire_style2" value="2" style="margin: 2px;"<!-- IF XFIRE_STYLE eq 2 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_COMBAT}</label>
