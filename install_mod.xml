@@ -113,19 +113,19 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 			{
 				$xfire_style = XFIRE_SH;
 			}
-			elseif ($member['user_xfire_style'] == XFIRE_COMBAT)
+			else if ($member['user_xfire_style'] == XFIRE_COMBAT)
 			{
 				$xfire_style = XFIRE_CO;
 			}
-			elseif ($member['user_xfire_style'] == XFIRE_SCIFI)
+			else if ($member['user_xfire_style'] == XFIRE_SCIFI)
 			{
 				$xfire_style = XFIRE_SF;
 			}
-			elseif ($member['user_xfire_style'] == XFIRE_FANTASY)
+			else if ($member['user_xfire_style'] == XFIRE_FANTASY)
 			{
 				$xfire_style = XFIRE_OS;
 			}
-			elseif ($member['user_xfire_style'] == XFIRE_WOW)
+			else if ($member['user_xfire_style'] == XFIRE_WOW)
 			{
 				$xfire_style = XFIRE_WO;
 			}

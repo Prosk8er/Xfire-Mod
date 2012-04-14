@@ -34,31 +34,10 @@
 		</installation>
 		<history>
 			<entry>
-				<date>2008-12-31</date>
-				<rev-version>1.0.0</rev-version>
+				<date>2011-08-26</date>
+				<rev-version>1.0.4</rev-version>
 				<changelog lang="en">
-					<change><![CDATA[Initial Release]]></change>
-				</changelog>
-			</entry>
-			<entry>
-				<date>2009-01-09</date>
-				<rev-version>1.0.1a</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
-				</changelog>
-			</entry>
-			<entry>
-				<date>2009-01-08</date>
-				<rev-version>1.0.1</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
-				</changelog>
-			</entry>
-			<entry>
-				<date>2009-01-14</date>
-				<rev-version>1.0.2</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Tightened up code for ucp_profile.php and html file]]></change>
+					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
 				</changelog>
 			</entry>
 			<entry>
@@ -69,10 +48,31 @@
 				</changelog>
 			</entry>
 			<entry>
-				<date>2011-08-26</date>
-				<rev-version>1.0.4</rev-version>
+				<date>2009-01-14</date>
+				<rev-version>1.0.2</rev-version>
 				<changelog lang="en">
-					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
+					<change><![CDATA[Tightened up code for ucp_profile.php and html file]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-08</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-09</date>
+				<rev-version>1.0.1a</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2008-12-31</date>
+				<rev-version>1.0.0</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Initial Release]]></change>
 				</changelog>
 			</entry>
 		</history>
