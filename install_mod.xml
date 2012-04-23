@@ -204,7 +204,7 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[					'msn'			=> request_var('msn', $user_row['user_msnm']),]]></find>
 				<action type="after-add"><![CDATA[					// xfire mod
-					'xfire'			=> (isset($user_row['user_xfire'])) ? strtolower(request_var('xfire', $user_row['user_xfire'])) : '',]]></action>
+					'xfire'			=> request_var('xfire', (!empty($user_row['user_xfire'])) ? $user_row['user_xfire'] : ''),]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[						'msn'			=> array('string', true, 5, 255),]]></find>
@@ -232,8 +232,8 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[					'msn'			=> request_var('msn', $user->data['user_msnm']),]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-					'xfire'                 => (isset($user_row['user_xfire'])) ? strtolower(request_var('xfire', $user_row['user_xfire'])) : '',
-					'xfire_style'           => request_var('xfire_style', $user->data['user_xfire_style']),
+					'xfire'			=> request_var('xfire', (!empty($user->data['user_xfire'])) ? $user->data['user_xfire'] : ''),
+					'xfire_style'	=> request_var('xfire_style', (!empty($user->data['user_xfire_style'])) ? $user->data['user_xfire_style'] : ''),
 //END xfire mod]]></action>
 			</edit>
 			<edit>
@@ -309,7 +309,7 @@ $user->add_lang('mods/xfire');
 		<dd><input type="text" name="xfire" id="xfire" maxlength="25" value="{XFIRE}" class="inputbox" /></dd>
 	</dl>
 	<dl>
-		<dt>{L_XFIRE_STYLE}:<br /><span>{L_XFIRE_STYLE_EXPLAIN}</span></dt>
+		<dt><label>{L_XFIRE_STYLE}:</label><br /><span>{L_XFIRE_STYLE_EXPLAIN}</span></dt>
 		<dd>
 			<label for="xfire_style1"><input type="radio" name="xfire_style" id="xfire_style1" value="1" style="margin: 2px;"<!-- IF XFIRE_STYLE eq 1 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_SHADOW}</label>
 			<label for="xfire_style2"><input type="radio" name="xfire_style" id="xfire_style2" value="2" style="margin: 2px;"<!-- IF XFIRE_STYLE eq 2 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_COMBAT}</label>

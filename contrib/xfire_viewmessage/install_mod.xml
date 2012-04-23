@@ -84,7 +84,7 @@
 				<comment lang="en"><![CDATA[around line 217]]></comment>
 				<find><![CDATA[		'U_MSN'			=> ($user_info['user_msnm'] && $auth->acl_get('u_sendim')) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", 'mode=contact&amp;action=msnm&amp;u=' . $author_id) : '',]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-		'U_XFIRE'		=> ($user_info['user_xfire'] && $auth->acl_get('u_sendim')) ? $user_info['user_xfire'] : '',
+		'U_XFIRE'		=> (isset($user_info['user_xfire']) && $auth->acl_get('u_sendim'))  ? $user_info['user_xfire'] : '',
 // END xfire mod]]></action>
 			</edit>
 		</open>

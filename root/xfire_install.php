@@ -60,7 +60,7 @@ $versions = array(
 			array('phpbb_users', 'user_xfire', array('VCHAR', '')),
 			array('phpbb_users', 'user_xfire_style', array('BOOL', '6')),
 		),
-		'cache_purge' => array('', 'template', 'theme', 'imageset'),
+		'cache_purge' => array('', 'imageset', 'template', 'theme'),
 	),
 );
 
