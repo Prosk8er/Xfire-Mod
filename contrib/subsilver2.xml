@@ -8,7 +8,9 @@
 		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
 		<title lang="en"><![CDATA[XFire Mod]]></title>
 		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
-		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.]]></author-notes>
+		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.
+
+Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it ready for validation.]]></author-notes>
 		<author-group>
 			<author>
 				<realname><![CDATA[Tyler]]></realname>
@@ -26,13 +28,20 @@
 				</contributions-group>
 			</author>
 		</author-group>
-		<mod-version>1.0.4</mod-version>
+		<mod-version>1.0.5</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1200</time>
 			<target-version>3.0.10</target-version>
 		</installation>
 		<history>
+			<entry>
+				<date>2012-05-02</date>
+				<rev-version>1.0.5</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Fixes for mod validation]]></change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2011-08-26</date>
 				<rev-version>1.0.4</rev-version>

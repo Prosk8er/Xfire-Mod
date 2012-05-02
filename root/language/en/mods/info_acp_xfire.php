@@ -5,7 +5,7 @@
 *
 * @author Prosk8er (Tyler) prosk8er@gotskillslounge.com
 * @package Xfire Mod
-* @version $Id: info_acp_xfire.php 104 2011-08-26 12:30:00Z Prosk8er $
+* @version $Id: info_acp_xfire.php 105 2012-05-02 18:18:00Z Prosk8er $
 * @copyright (c) 2011 Prosk8er ( http://www.gotskillslounge.com/ )
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
