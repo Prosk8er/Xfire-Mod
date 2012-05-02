@@ -75,46 +75,39 @@
 		<open src="includes/ucp/ucp_register.php">
 			<edit>
 				<find><![CDATA[		$cp = new custom_profile();]]></find>
-				<action type="after-add"><![CDATA[		// xfire mod
-		$user->add_lang('mods/xfire');]]></action>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+		$user->add_lang('mods/xfire');
+// END xfire mod]]></action>
 			</edit>
 			<edit>
-				<find><![CDATA[		$data = array(
-			'username'			=> utf8_normalize_nfc(request_var('username', '', true)),
-			'new_password'		=> request_var('new_password', '', true),]]></find>
-				<action type="after-add"><![CDATA[// Xfire Required For Registration
-			'xfire'            => request_var('xfire', '', true),
-// Xfire Required For Registration]]></action>
+				<find><![CDATA[			'tz'				=> request_var('tz', (float) $timezone),]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+			'xfire'				=> request_var('xfire', '', true),
+			'xfire_style'			=> request_var('xfire_style', 0),
+// END xfire mod]]></action>
 			</edit>
 			<edit>
-				<find><![CDATA[				'password_confirm'	=> array('string', false, $config['min_pass_chars'], $config['max_pass_chars']),
-				'email'				=> array(
-					array('string', false, 6, 60),
-					array('email')),
-				'email_confirm'		=> array('string', false, 6, 60),]]></find>
-				<action type="after-add"><![CDATA[// Xfire Required For Registration
-				'xfire'            => array('string', false, 2, 60),
-// Xfire Required For Registration]]></action>
+				<find><![CDATA[				'tz'				=> array('num', false, -14, 14),
+				'lang'				=> array('language_iso_name'),]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+				'xfire'				=> array('string', false, 2, 60),
+// END xfire mod]]></action>
 			</edit>
 			<edit>
-				<find><![CDATA[				$user_row = array(
-					'username'				=> $data['username'],
-					'user_password'			=> phpbb_hash($data['new_password']),
-					'user_email'			=> $data['email'],]]></find>
-				<action type="after-add"><![CDATA[// Xfire Required For Registration
-					'user_xfire'            => $data['xfire'],
-// Xfire Required For Registration]]></action>
+				<find><![CDATA[					'user_lang'				=> $data['lang'],]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+					'user_xfire'				=> $data['xfire'],
+					'user_xfire_style'			=> $data['xfire_style'],
+// END xfire mod]]></action>
 			</edit>
 			<edit>
-				<find><![CDATA[		$template->assign_vars(array(
-			'ERROR'				=> (sizeof($error)) ? implode('<br />', $error) : '',
-			'USERNAME'			=> $data['username'],
-			'PASSWORD'			=> $data['new_password'],
-			'PASSWORD_CONFIRM'	=> $data['password_confirm'],]]></find>
-				<action type="after-add"><![CDATA[// Xfire Required For Registration
-			'XFIRE'            => $data['xfire'],
-			'XFIRE_EXPLAIN'      => sprintf($user->lang['XFIRE_EXPLAIN'], '<a href="' . append_sid("{$phpbb_root_path}faq.$phpEx") . '">', '</a>'),
-// Xfire Required For Registration]]></action>
+				<find><![CDATA[			'S_LANG_OPTIONS'	=> language_select($data['lang']),
+			'S_TZ_OPTIONS'		=> tz_select($data['tz']),]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+			'XFIRE'			=> $data['xfire'],
+			'XFIRE_STYLE'		=> $data['xfire_style'],
+			'XFIRE_EXPLAIN'		=> sprintf($user->lang['XFIRE_EXPLAIN'], '<a href="' . append_sid("{$phpbb_root_path}faq.$phpEx") . '">', '</a>'),
+// END xfire mod]]></action>
 			</edit>
 		</open>
 		<open src="styles/prosilver/template/ucp_register.html">

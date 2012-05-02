@@ -100,12 +100,12 @@
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 $user->add_lang('mods/xfire');
 include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[case 'viewprofile':]]></find>
 				<find><![CDATA[$template->assign_vars(array(]]></find>
-				<action type="before-add"><![CDATA[		//BEGIN xfire mod
+				<action type="before-add"><![CDATA[// BEGIN xfire mod
 		if (!empty($member['user_xfire']))
 		{
 			$xfire_style = XFIRE_BG;
@@ -130,7 +130,7 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 				$xfire_style = XFIRE_WO;
 			}
 		}
-		// END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA['SIGNATURE'		=>]]></find>
@@ -163,13 +163,13 @@ $user->add_lang('mods/xfire');
 				<find><![CDATA[				'msn'			=> ($row['user_msnm'] && $auth->acl_get('u_sendim')) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", "mode=contact&amp;action=msnm&amp;u=$poster_id") : '',]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 				'xfire'			=> (isset($row['user_xfire']) && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[		'U_MSN'			=> $user_cache[$poster_id]['msn'],]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 		'U_XFIRE'			=> $user_cache[$poster_id]['xfire'],
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 		</open>
 		<open src="adm/style/acp_users_profile.html">
@@ -198,28 +198,33 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[			case 'profile':]]></find>
 				<find><![CDATA[				$cp = new custom_profile();]]></find>
-				<action type="after-add"><![CDATA[				// xfire mod
-				$user->add_lang('mods/xfire');]]></action>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+				$user->add_lang('mods/xfire');
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[					'msn'			=> request_var('msn', $user_row['user_msnm']),]]></find>
-				<action type="after-add"><![CDATA[					// xfire mod
-					'xfire'			=> request_var('xfire', (!empty($user_row['user_xfire'])) ? $user_row['user_xfire'] : ''),]]></action>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+					'xfire'			=> request_var('xfire', (!empty($user_row['user_xfire'])) ? $user_row['user_xfire'] : ''),
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[						'msn'			=> array('string', true, 5, 255),]]></find>
-				<action type="after-add"><![CDATA[						// xfire mod
-						'xfire'			=> array('string', true, 4, 25),]]></action>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+						'xfire'			=> array('string', true, 4, 25),
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[							'user_msnm'		=> $data['msn'],]]></find>
-				<action type="after-add"><![CDATA[							// xfire mod
-							'user_xfire'		=> $data['xfire'],]]></action>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+							'user_xfire'		=> $data['xfire'],
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[					'MSN'			=> $data['msn'],]]></find>
-				<action type="after-add"><![CDATA[					// xfire mod
-					'XFIRE'			=> $data['xfire'],]]></action>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+					'XFIRE'			=> $data['xfire'],
+// END xfire mod]]></action>
 			</edit>
 		</open>
 		<open src="includes/ucp/ucp_profile.php">
@@ -227,35 +232,35 @@ $user->add_lang('mods/xfire');
 				<find><![CDATA[				$cp_data = $cp_error = array();]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 				$user->add_lang('mods/xfire');
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[					'msn'			=> request_var('msn', $user->data['user_msnm']),]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 					'xfire'			=> request_var('xfire', (!empty($user->data['user_xfire'])) ? $user->data['user_xfire'] : ''),
 					'xfire_style'	=> request_var('xfire_style', (!empty($user->data['user_xfire_style'])) ? $user->data['user_xfire_style'] : ''),
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[						'msn'			=> array('string', true, 5, 255),]]></find>
-				<action type="after-add"><![CDATA[//BEGIN xfire mod
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
 						'xfire'			=> array('string', true, 4, 25),
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[							'user_msnm'		=> $data['msn'],]]></find>
-				<action type="after-add"><![CDATA[//BEGIN xfire mod
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
 							'user_xfire'		=> $data['xfire'],
 							'user_xfire_style'      => $data['xfire_style'],
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 			<edit>
 				<find><![CDATA[					'MSN'		=> $data['msn'],]]></find>
-				<action type="after-add"><![CDATA[//BEGIN xfire mod
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
 					'XFIRE'			=> $data['xfire'],
 					'XFIRE_STYLE'		=> $data['xfire_style'],
 					'XFIRE_EXPLAIN'		=> sprintf($user->lang['XFIRE_EXPLAIN'], '<a href="' . append_sid("{$phpbb_root_path}faq.$phpEx") . '">', '</a>'),
-//END xfire mod]]></action>
+// END xfire mod]]></action>
 			</edit>
 		</open>
 		<open src="language/en/help_faq.php">
@@ -268,7 +273,7 @@ $user->add_lang('mods/xfire');
 	),
 	array(
 		0 => 'What is XFire?',
-		1 => '<a href="http://www.xfire.com">XFire</a> is a free gaming tool that automatically keeps track of when and where gamers are playing PC games online and lets their friends join them easily. It doesn’t matter which online game your friends are playing, which server browser they are using, or which gaming service they’re playing on; Xfire is intelligent enough to recognize where your friends are at any time.',
+		1 => '<a href="http://www.xfire.com">XFire</a> is a free gaming tool that automatically keeps track of when and where gamers are playing PC games online and lets their friends join them easily. It doesn’t matter which online game your friends are playing, which server browser they are using, or which gaming service they’re playing on. Xfire is intelligent enough to recognize where your friends are at any time.',
 	),
 	array(
 		0 => 'How can I add users to my XFire account?',
@@ -357,6 +362,6 @@ $user->add_lang('mods/xfire');
 			</edit>
 		</open>
 		<php-installer><![CDATA[xfire_install.php]]></php-installer>
-		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, browse to the xfire_install.php file.  Once run, delete the file, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>
+		<diy-instructions lang="en"><![CDATA[Once the installer has been run you can delete the file.]]></diy-instructions>
 	</action-group>
 </mod>
