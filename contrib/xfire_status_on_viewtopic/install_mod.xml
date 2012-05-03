@@ -6,7 +6,7 @@
 	<header>
 		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
 		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
-		<title lang="en"><![CDATA[Xfire Status on viewtopic]]></title>
+		<title lang="en"><![CDATA[Xfire Mod Status On Viewtopic]]></title>
 		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
 		<author-notes lang="en"><![CDATA[Works on prosilver and subsilver2 styles.]]></author-notes>
 		<author-group>

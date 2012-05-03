@@ -90,9 +90,9 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 			<link type="contrib" href="./contrib/update_103_to_104/install_mod.xml" lang="en">Update 1.0.3 to 1.0.4</link>
 			<link type="contrib" href="./contrib/update_104_to_105/install_mod.xml" lang="en">Update 1.0.4 to 1.0.5</link>
 			<link type="contrib" href="./contrib/required_by_registration/install_mod.xml" lang="en">Required By Registration</link>
-			<link type="contrib" href="./contrib/xfire_status_on_viewmessage/install_mod.xml" lang="en">Xfire Mod status on viewmessage</link>
-			<link type="contrib" href="./contrib/xfire_status_on_viewtopic/install_mod.xml" lang="en">Xfire Mod status on viewtopic</link>
-			<link type="contrib" href="./contrib/xfire_viewmessage/install_mod.xml" lang="en">Xfire Mod for viewmessage</link>
+			<link type="contrib" href="./contrib/xfire_status_on_viewmessage/install_mod.xml" lang="en">Xfire Mod Status On Viewmessage</link>
+			<link type="contrib" href="./contrib/xfire_status_on_viewtopic/install_mod.xml" lang="en">Xfire Mod Status On Viewtopic</link>
+			<link type="contrib" href="./contrib/xfire_viewmessage/install_mod.xml" lang="en">Xfire Mod On Viewmessage</link>
 		</link-group>
 	</header>
 	<action-group>
@@ -146,7 +146,7 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 				<find><![CDATA['SIGNATURE'		=>]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 			'XFIRE'		=> (!empty($member['user_xfire'])) ? $member['user_xfire'] : '',
-			'XFIRE_STYLE'   => (!empty($member['user_xfire'])) ? $xfire_style : XFIRE_BG,
+			'XFIRE_STYLE'	=> (!empty($member['user_xfire'])) ? $xfire_style : XFIRE_BG,
 // END xfire mod]]></action>
 			</edit>
 		</open>
@@ -172,7 +172,7 @@ $user->add_lang('mods/xfire');
 			<edit>
 				<find><![CDATA[				'msn'			=> ($row['user_msnm'] && $auth->acl_get('u_sendim')) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", "mode=contact&amp;action=msnm&amp;u=$poster_id") : '',]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
-				'xfire'			=> (isset($row['user_xfire']) && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
+				'xfire'			=> (isset($row['user_xfire']) && $auth->acl_get('u_sendim')) ? $row['user_xfire'] : '',
 // END xfire mod]]></action>
 			</edit>
 			<edit>
@@ -346,7 +346,7 @@ $user->add_lang('mods/xfire');
 			</edit>
 			<edit>
 				<find><![CDATA[					<!-- IF postrow.U_MSN --><li class="msnm-icon"><a href="{postrow.U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><span>{L_MSNM}</span></a></li><!-- ENDIF -->]]></find>
-				<action type="after-add"><![CDATA[  					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://profile.xfire.com/{postrow.U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
+				<action type="after-add"><![CDATA[					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://profile.xfire.com/{postrow.U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
 			</edit>
 		</open>
 		<open src="styles/prosilver/theme/buttons.css">

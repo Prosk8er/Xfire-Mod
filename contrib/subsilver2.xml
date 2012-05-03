@@ -113,7 +113,7 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 				</div>
 			</td>
 		</tr>
-	<!-- ENDIF -->	]]></action>
+	<!-- ENDIF -->]]></action>
 			</edit>
 		</open>
 		<open src="styles/subsilver2/template/ucp_profile_profile_info.html">
@@ -134,8 +134,7 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 		<input type="radio" name="xfire_style" id="xfire_style5" value="5"<!-- IF XFIRE_STYLE eq 5 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_WOW}
 		<input type="radio" name="xfire_style" id="xfire_style6" value="6"<!-- IF XFIRE_STYLE eq 6 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_DEFAULT}
 	</td>
-</tr>
-]]></action>
+</tr>]]></action>
 			</edit>
 		</open>
 		<open src="styles/subsilver2/template/viewtopic_body.html">

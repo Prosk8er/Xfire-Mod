@@ -160,6 +160,16 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 		}
 // END xfire mod]]></action>
 			</edit>
+			<edit>
+				<find><![CDATA[// BEGIN xfire mod
+			'XFIRE'		=> (!empty($member['user_xfire'])) ? $member['user_xfire'] : '',
+			'XFIRE_STYLE'   => (!empty($member['user_xfire'])) ? $xfire_style : XFIRE_BG,
+// END xfire mod]]></find>
+				<action type="replace-with"><![CDATA[// BEGIN xfire mod
+			'XFIRE'		=> (!empty($member['user_xfire'])) ? $member['user_xfire'] : '',
+			'XFIRE_STYLE'	=> (!empty($member['user_xfire'])) ? $xfire_style : XFIRE_BG,
+// END xfire mod]]></action>
+			</edit>
 		</open>
 		<open src="viewtopic.php">
 			<edit>
@@ -167,7 +177,7 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 				'xfire'			=> ($row['user_xfire'] && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
 //END xfire mod]]></find>
 				<action type="replace-with"><![CDATA[// BEGIN xfire mod
-				'xfire'			=> (isset($row['user_xfire']) && $auth->acl_get('u_sendim'))  ? $row['user_xfire'] : '',
+				'xfire'			=> (isset($row['user_xfire']) && $auth->acl_get('u_sendim')) ? $row['user_xfire'] : '',
 // END xfire mod]]></action>
 			</edit>
 			<edit>

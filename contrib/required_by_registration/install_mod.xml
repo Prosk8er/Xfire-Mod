@@ -120,8 +120,8 @@
 		<open src="styles/prosilver/template/ucp_register.html">
 			<edit>
 				<find><![CDATA[	<dl>
-		<dt><label for="password_confirm">{L_CONFIRM_PASSWORD}:</label></dt>
-		<dd><input type="password" tabindex="5" name="password_confirm" id="password_confirm" size="25" value="{PASSWORD_CONFIRM}" class="inputbox autowidth" title="{L_CONFIRM_PASSWORD}" /></dd>
+		<dt><label for="tz">{L_TIMEZONE}:</label></dt>
+		<dd><select name="tz" id="tz" tabindex="7" class="autowidth">{S_TZ_OPTIONS}</select></dd>
 	</dl>]]></find>
 				<action type="after-add"><![CDATA[	<dl>
 		<dt><label for="xfire">{L_XFIRE}:</label><br /><span>{XFIRE_EXPLAIN}</span></dt>
@@ -143,8 +143,8 @@
 		<open src="styles/subsilver2/template/ucp_register.html">
 			<edit>
 				<find><![CDATA[<tr>
-	<td class="row1"><b class="genmed">{L_CONFIRM_PASSWORD}: </b></td>
-	<td class="row2"><input class="post" type="password" name="password_confirm" size="25" value="{PASSWORD_CONFIRM}" /></td>
+	<td class="row1"><b class="genmed">{L_TIMEZONE}: </b></td>
+	<td class="row2"><select name="tz">{S_TZ_OPTIONS}</select></td>
 </tr>]]></find>
 				<action type="after-add"><![CDATA[<tr>
 	<td class="row1"><b class="genmed">{L_XFIRE}: </b><br /><span class="gensmall">{XFIRE_EXPLAIN}</span></td>
