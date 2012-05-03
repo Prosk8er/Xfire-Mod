@@ -26,20 +26,13 @@
 				</contributions-group>
 			</author>
 		</author-group>
-		<mod-version>1.0.5</mod-version>
+		<mod-version>1.0.4</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1200</time>
 			<target-version>3.0.10</target-version>
 		</installation>
 		<history>
-			<entry>
-				<date>2012-05-02</date>
-				<rev-version>1.0.5</rev-version>
-				<changelog lang="en">
-					<change><![CDATA[Fixes for mod validation]]></change>
-				</changelog>
-			</entry>
 			<entry>
 				<date>2011-08-26</date>
 				<rev-version>1.0.4</rev-version>
