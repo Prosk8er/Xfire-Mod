@@ -1,0 +1,6 @@
+Xfire mod for phpBB3
+
+Displays a small image of users that have entered in an XFire account in viewtopic
+(when clicked on will take a user to the members XFire Profile) as well as their profile
+(XFire mini-profile found just above signature panel, when clicked on will take the
+member to that users xfire profile).
