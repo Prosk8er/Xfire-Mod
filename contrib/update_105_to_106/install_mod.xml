@@ -6,16 +6,24 @@
 	<header>
 		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
 		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
-		<title lang="en"><![CDATA[Xfire Mod Status On Viewmessage]]></title>
+		<title lang="en"><![CDATA[XFire Mod Update 1.0.5 to 1.0.6]]></title>
 		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
-		<author-notes lang="en"><![CDATA[Works on prosilver and subsilver2 styles.
-To be able to use 'Xfire Mod Status On Viewmessage' you must first install 'Xfire Mod on Viewmessage']]></author-notes>
+		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.]]></author-notes>
 		<author-group>
 			<author>
 				<realname><![CDATA[Tyler]]></realname>
 				<username><![CDATA[bprsk8r4272]]></username>
 				<homepage><![CDATA[http://gotskillslounge.com]]></homepage>
 				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
+			</author>
+			<author>
+				<realname><![CDATA[Richard McGirr]]></realname>
+				<username><![CDATA[RMcGirr83]]></username>
+				<homepage><![CDATA[http://rmcgirr83.org]]></homepage>
+				<email><![CDATA[rmcgirr83@rmcgirr83.org]]></email>
+				<contributions-group>
+					<contributions status="past" from="2008-12-31" to="2009-03-02" position="Origional Author"/>
+				</contributions-group>
 			</author>
 		</author-group>
 		<mod-version>1.0.6</mod-version>
@@ -87,13 +95,38 @@ To be able to use 'Xfire Mod Status On Viewmessage' you must first install 'Xfir
 		</link-group>
 	</header>
 	<action-group>
-		<open src="styles/prosilver/template/ucp_pm_viewmessage.html">
+		<copy>
+			<file from="root/umil/*.*" to="umil/*.*"/>
+			<file from="root/xfire_install.php" to="xfire_install.php"/>
+		</copy>
+		<open src="viewtopic.php">
 			<edit>
-				<comment lang="en"><![CDATA[around line 67]]></comment>
-				<find><![CDATA[		<!-- IF RANK_IMG --><dd>{RANK_IMG}</dd><!-- ENDIF -->]]></find>
-				<action type="after-add"><![CDATA[		<!-- IF U_XFIRE --><br /><dd><a href="http://profile.xfire.com/{U_XFIRE}" onclick="window.open(this.href); return false;"><img src="http://miniprofile.xfire.com/bg/sh/type/3/{U_XFIRE}.png" width="149" height="29" alt="{L_XFIRE}: {U_XFIRE}" title="{L_XFIRE}: {U_XFIRE}" /></a></dd><!-- ENDIF -->]]></action>
+				<find><![CDATA[// BEGIN xfire mod
+$user->add_lang('mods/xfire');
+// END xfire mod]]></find>
+				<remove><![CDATA[// BEGIN xfire mod
+$user->add_lang('mods/xfire');
+// END xfire mod]]></remove>
+			</edit>
+			<edit>
+				<find><![CDATA[// Setup look and feel
+$user->setup('viewtopic', $topic_data['forum_style']);]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+$user->add_lang('mods/xfire');
+// END xfire mod]]></action>
 			</edit>
 		</open>
-		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>
+		<open src="styles/prosilver/theme/colours.css">
+			<edit>
+				<find><![CDATA[.xfire a, .xfire a:visited, .xfire a:active, .xfire a:hover {
+	background-color: transparent;
+}]]></find>
+				<action type="replace-with"><![CDATA[.xfire a, .xfire a:visited, .xfire a:hover, .xfire a:active {
+	background-color: transparent;
+}]]></action>
+			</edit>
+		</open>
+		<php-installer><![CDATA[xfire_install.php]]></php-installer>
+		<diy-instructions lang="en"><![CDATA[Once the installer has been run you can delete the file.]]></diy-instructions>
 	</action-group>
 </mod>

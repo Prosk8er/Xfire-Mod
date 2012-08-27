@@ -28,13 +28,20 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 				</contributions-group>
 			</author>
 		</author-group>
-		<mod-version>1.0.5</mod-version>
+		<mod-version>1.0.6</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1200</time>
-			<target-version>3.0.10</target-version>
+			<target-version>3.0.11</target-version>
 		</installation>
 		<history>
+			<entry>
+				<date>2012-06-27</date>
+				<rev-version>1.0.6</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[couple small changes]]></change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2012-05-02</date>
 				<rev-version>1.0.5</rev-version>
@@ -89,6 +96,7 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 			<link type="template" href="./contrib/subsilver2.xml" lang="en">subsilver2</link>
 			<link type="contrib" href="./contrib/update_103_to_104/install_mod.xml" lang="en">Update 1.0.3 to 1.0.4</link>
 			<link type="contrib" href="./contrib/update_104_to_105/install_mod.xml" lang="en">Update 1.0.4 to 1.0.5</link>
+			<link type="contrib" href="./contrib/update_105_to_106/install_mod.xml" lang="en">Update 1.0.5 to 1.0.6</link>
 			<link type="contrib" href="./contrib/required_by_registration/install_mod.xml" lang="en">Required By Registration</link>
 			<link type="contrib" href="./contrib/xfire_status_on_viewmessage/install_mod.xml" lang="en">Xfire Mod Status On Viewmessage</link>
 			<link type="contrib" href="./contrib/xfire_status_on_viewtopic/install_mod.xml" lang="en">Xfire Mod Status On Viewtopic</link>
@@ -152,7 +160,8 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 		</open>
 		<open src="viewtopic.php">
 			<edit>
-				<find><![CDATA[$auth->acl($user->data);]]></find>
+				<find><![CDATA[// Setup look and feel
+$user->setup('viewtopic', $topic_data['forum_style']);]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 $user->add_lang('mods/xfire');
 // END xfire mod]]></action>
@@ -362,7 +371,7 @@ $user->add_lang('mods/xfire');
 		<open src="styles/prosilver/theme/colours.css">
 			<edit>
 				<find><![CDATA[.signature]]></find>
-				<action type="before-add"><![CDATA[.xfire a, .xfire a:visited, .xfire a:active, .xfire a:hover {
+				<action type="before-add"><![CDATA[.xfire a, .xfire a:visited, .xfire a:hover, .xfire a:active {
 	background-color: transparent;
 }]]></action>
 			</edit>
