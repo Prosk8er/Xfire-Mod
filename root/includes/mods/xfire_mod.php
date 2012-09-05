@@ -3,7 +3,7 @@
 *
 * @author Prosk8er (Tyler) prosk8er@gotskillslounge.com
 * @package Xfire Mod
-* @version $Id: xfire_mod.php 105 2012-05-02 18:18:00Z Prosk8er $
+* @version $Id: xfire_mod.php 106 2012-08-31 11:25:00Z Prosk8er $
 * @copyright (c) 2011 Prosk8er ( http://www.gotskillslounge.com/ )
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -15,6 +15,32 @@
 if (!defined('IN_PHPBB'))
 {
 	exit;
+}
+
+// define these first as next code is dependant
+if (!defined('XFIRE_BG'))
+{
+	define('XFIRE_BG', 'bg');
+}
+if (!defined('XFIRE_SH'))
+{
+	define('XFIRE_SH', 'sh');
+}
+if (!defined('XFIRE_CO'))
+{
+	define('XFIRE_CO', 'co');
+}
+if (!defined('XFIRE_SF'))
+{
+	define('XFIRE_SF', 'sf');
+}
+if (!defined('XFIRE_OS'))
+{
+	define('XFIRE_OS', 'os');
+}
+if (!defined('XFIRE_WO'))
+{
+	define('XFIRE_WO', 'wow');
 }
 
 // define constants used in user cp
@@ -41,28 +67,4 @@ if (!defined('XFIRE_WOW'))
 if (!defined('XFIRE_DEFAULT'))
 {
 	define('XFIRE_DEFAULT', 6);
-}
-if (!defined('XFIRE_BG'))
-{
-	define('XFIRE_BG', 'bg');
-}
-if (!defined('XFIRE_SH'))
-{
-	define('XFIRE_SH', 'sh');
-}
-if (!defined('XFIRE_CO'))
-{
-	define('XFIRE_CO', 'co');
-}
-if (!defined('XFIRE_SF'))
-{
-	define('XFIRE_SF', 'sf');
-}
-if (!defined('XFIRE_OS'))
-{
-	define('XFIRE_OS', 'os');
-}
-if (!defined('XFIRE_WO'))
-{
-	define('XFIRE_WO', 'wow');
 }

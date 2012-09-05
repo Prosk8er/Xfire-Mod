@@ -124,28 +124,35 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 				<find><![CDATA[case 'viewprofile':]]></find>
 				<find><![CDATA[$template->assign_vars(array(]]></find>
 				<action type="before-add"><![CDATA[// BEGIN xfire mod
-		if (!empty($member['user_xfire']))
+		$xfire_style = (isset($member['user_xfire_style'])) ? $member['user_xfire_style'] : '';
+
+		if (isset($member['user_xfire']))
 		{
-			$xfire_style = XFIRE_BG;
-			if ($member['user_xfire_style'] == XFIRE_SHADOW)
+			switch ($xfire_style)
 			{
-				$xfire_style = XFIRE_SH;
-			}
-			else if ($member['user_xfire_style'] == XFIRE_COMBAT)
-			{
-				$xfire_style = XFIRE_CO;
-			}
-			else if ($member['user_xfire_style'] == XFIRE_SCIFI)
-			{
-				$xfire_style = XFIRE_SF;
-			}
-			else if ($member['user_xfire_style'] == XFIRE_FANTASY)
-			{
-				$xfire_style = XFIRE_OS;
-			}
-			else if ($member['user_xfire_style'] == XFIRE_WOW)
-			{
-				$xfire_style = XFIRE_WO;
+				case XFIRE_SHADOW:
+					$xfire_style = XFIRE_SH;
+				break;
+
+				case XFIRE_COMBAT:
+					$xfire_style = XFIRE_CO;
+				break;
+
+				case XFIRE_SCIFI:
+					$xfire_style = XFIRE_SF;
+				break;
+
+				case XFIRE_FANTASY:
+					$xfire_style = XFIRE_OS;
+				break;
+
+				case XFIRE_WOW:
+					$xfire_style = XFIRE_WO;
+				break;
+
+				default:
+					$xfire_style = XFIRE_BG;
+				break;
 			}
 		}
 // END xfire mod]]></action>
@@ -154,7 +161,7 @@ include($phpbb_root_path . 'includes/mods/xfire_mod.' . $phpEx);
 				<find><![CDATA['SIGNATURE'		=>]]></find>
 				<action type="after-add"><![CDATA[// BEGIN xfire mod
 			'XFIRE'		=> (!empty($member['user_xfire'])) ? $member['user_xfire'] : '',
-			'XFIRE_STYLE'	=> (!empty($member['user_xfire'])) ? $xfire_style : XFIRE_BG,
+			'XFIRE_STYLE'	=> (!empty($member['user_xfire'])) ? $xfire_style : '',
 // END xfire mod]]></action>
 			</edit>
 		</open>
