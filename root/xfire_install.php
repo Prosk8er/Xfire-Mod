@@ -3,7 +3,7 @@
 *
 * @author Prosk8er (Tyler) prosk8er@gotskillslounge.com
 * @package Xfire Mod
-* @version $Id: xfire_install.php 106 2012-08-31 11:25:00Z Prosk8er $
+* @version $Id: xfire_install.php 107 2012-11-28 20:00:00Z Prosk8er $
 * @copyright (c) 2011 Prosk8er ( http://www.gotskillslounge.com/ )
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -66,6 +66,9 @@ $versions = array(
 	),
 	// Version 1.0.6
 	'1.0.6' => array(
+	),
+	// Version 1.0.7
+	'1.0.7' => array(
 		'cache_purge' => array('', 'imageset', 'template', 'theme'),
 	),
 );
