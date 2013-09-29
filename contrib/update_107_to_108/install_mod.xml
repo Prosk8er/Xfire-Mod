@@ -6,11 +6,9 @@
 	<header>
 		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
 		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
-		<title lang="en"><![CDATA[XFire Mod]]></title>
+		<title lang="en"><![CDATA[XFire Mod Update 1.0.7 to 1.0.8]]></title>
 		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
-		<author-notes lang="en"><![CDATA[Comes in both subSilver2 and prosilver flavors.
-
-Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it ready for validation.]]></author-notes>
+		<author-notes lang="en"><![CDATA[Works on prosilver and subsilver2 styles.]]></author-notes>
 		<author-group>
 			<author>
 				<realname><![CDATA[Tyler]]></realname>
@@ -31,7 +29,7 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 		<mod-version>1.0.8</mod-version>
 		<installation>
 			<level>easy</level>
-			<time>180</time>
+			<time>120</time>
 			<target-version>3.0.12</target-version>
 		</installation>
 		<history>
@@ -108,65 +106,42 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 			</entry>
 		</history>
 		<link-group>
-			<link type="parent" href="../install_mod.xml" lang="en">Main install file</link>
+			<link type="parent" href="../../install_mod.xml" lang="en">Main install file</link>
 		</link-group>
 	</header>
 	<action-group>
 		<copy>
-			<file from="root/styles/subsilver2/imageset/en/icon_contact_xfire.gif" to="styles/subsilver2/imageset/en/icon_contact_xfire.gif"/>
+			<file from="root/umil/*.*" to="umil/*.*"/>
+			<file from="root/xfire_install.php" to="xfire_install.php"/>
 		</copy>
-		<open src="styles/subsilver2/imageset/en/imageset.cfg">
+		<open src="styles/prosilver/template/memberlist_view.html">
 			<edit>
-				<find><![CDATA[img_icon_contact_msnm = icon_contact_msnm.gif]]></find>
-				<action type="after-add"><![CDATA[img_icon_contact_xfire = icon_contact_xfire.gif]]></action>
+				<find><![CDATA[			<div class="xfire" style="border-top:none; margin-top: 0;"><a href="http://profile.xfire.com/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> | <a href="http://www.xfire.com/download/">{L_DOWNLOAD_XFIRE}</a></div></div>]]></find>
+				<action type="replace-with"><![CDATA[			<div class="xfire" style="border-top: none; margin-top: 0;"><a href="http://www.xfire.com/profile/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> | <a href="http://www.xfire.com/">{L_DOWNLOAD_XFIRE}</a></div></div>]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/viewtopic_body.html">
+			<edit>
+				<find><![CDATA[					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://profile.xfire.com/{postrow.U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></find>
+				<action type="replace-with"><![CDATA[					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://www.xfire.com/profile/{postrow.U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
 			</edit>
 		</open>
 		<open src="styles/subsilver2/template/memberlist_view.html">
 			<edit>
-				<find><![CDATA[	<!-- IF SIGNATURE -->]]></find>
-				<action type="before-add"><![CDATA[	<!-- IF XFIRE -->
-		<tr>
-			<td class="cat" colspan="2" align="center"><h4>{L_XFIRE}</h4></td>
-		</tr>
-		<tr>
-			<td class="row1" colspan="2">
-				<div class="postbody">
-					<div class="xfire" style="border-top: none; margin-top: 0;"><a href="http://www.xfire.com/profile/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> &bull; <a href="http://www.xfire.com/">{L_DOWNLOAD_XFIRE}</a></div></div>
-				</div>
-			</td>
-		</tr>
-	<!-- ENDIF -->]]></action>
-			</edit>
-		</open>
-		<open src="styles/subsilver2/template/ucp_profile_profile_info.html">
-			<edit>
-				<find><![CDATA[	<td class="row2"><input class="post" type="text" name="msn" size="30" maxlength="255" value="{MSN}" /></td>
-</tr>]]></find>
-				<action type="after-add"><![CDATA[<tr>
-	<td class="row1" width="35%"><b class="genmed">{L_XFIRE}: </b><br /><span class="gensmall">{XFIRE_EXPLAIN}</span></td>
-	<td class="row2"><input class="post" type="text" name="xfire" size="30" maxlength="255" value="{XFIRE}" /></td>
-</tr>
-<tr>
-	<td class="row1" width="35%"><b class="genmed">{L_XFIRE_STYLE}: </b><br /><span class="gensmall">{L_XFIRE_STYLE_EXPLAIN}</span></td>
- 	<td class="row2">
-		<input type="radio" name="xfire_style" id="xfire_style1" value="1"<!-- IF XFIRE_STYLE eq 1 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_SHADOW}
-		<input type="radio" name="xfire_style" id="xfire_style2" value="2"<!-- IF XFIRE_STYLE eq 2 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_COMBAT}
-		<input type="radio" name="xfire_style" id="xfire_style3" value="3"<!-- IF XFIRE_STYLE eq 3 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_SCIFI}
-		<input type="radio" name="xfire_style" id="xfire_style4" value="4"<!-- IF XFIRE_STYLE eq 4 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_FANTASY}
-		<input type="radio" name="xfire_style" id="xfire_style5" value="5"<!-- IF XFIRE_STYLE eq 5 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_WOW}
-		<input type="radio" name="xfire_style" id="xfire_style6" value="6"<!-- IF XFIRE_STYLE eq 6 --> checked="checked"<!-- ENDIF --> /> {L_XFIRE_DEFAULT}
-	</td>
-</tr>]]></action>
+				<find><![CDATA[					<div class="xfire" style="border-top:none; margin-top: 0;"><a href="http://profile.xfire.com/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> &bull; <a href="http://www.xfire.com/download/">{L_DOWNLOAD_XFIRE}</a></div></div>]]></find>
+				<action type="replace-with"><![CDATA[					<div class="xfire" style="border-top: none; margin-top: 0;"><a href="http://www.xfire.com/profile/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> &bull; <a href="http://www.xfire.com/">{L_DOWNLOAD_XFIRE}</a></div></div>]]></action>
 			</edit>
 		</open>
 		<open src="styles/subsilver2/template/viewtopic_body.html">
 			<edit>
 				<find><![CDATA[			<td><div class="gensmall" style="float: {S_CONTENT_FLOW_BEGIN};">&nbsp;<!-- IF postrow.U_POST_AUTHOR -->]]></find>
 				<inline-edit>
-					<inline-find><![CDATA[ <!-- IF postrow.U_EMAIL --><a href="{postrow.U_EMAIL}">{EMAIL_IMG}</a> <!-- ENDIF -->]]></inline-find>
-					<inline-action type="after-add"><![CDATA[ <!-- IF postrow.U_XFIRE --><a href="http://www.xfire.com/profile/{postrow.U_XFIRE}">{XFIRE_IMG}</a> <!-- ENDIF -->]]></inline-action>
+					<inline-find><![CDATA[<!-- IF postrow.U_XFIRE --><a href="http://profile.xfire.com/{postrow.U_XFIRE}">{XFIRE_IMG}</a> <!-- ENDIF -->]]></inline-find>
+					<inline-action type="replace-with"><![CDATA[<!-- IF postrow.U_XFIRE --><a href="http://www.xfire.com/profile/{postrow.U_XFIRE}">{XFIRE_IMG}</a> <!-- ENDIF -->]]></inline-action>
 				</inline-edit>
 			</edit>
 		</open>
+		<php-installer><![CDATA[xfire_install.php]]></php-installer>
+		<diy-instructions lang="en"><![CDATA[Once the installer has been run you can delete the file.]]></diy-instructions>
 	</action-group>
 </mod>

@@ -17,13 +17,21 @@
 				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
 			</author>
 		</author-group>
-		<mod-version>1.0.7</mod-version>
+		<mod-version>1.0.8</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>240</time>
-			<target-version>3.0.11</target-version>
+			<target-version>3.0.12</target-version>
 		</installation>
 		<history>
+			<entry>
+				<date>2013-09-28</date>
+				<rev-version>1.0.8</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Updated for phpBB 3.0.12]]></change>
+					<change><![CDATA[fixed download link]]></change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2012-11-28</date>
 				<rev-version>1.0.7</rev-version>

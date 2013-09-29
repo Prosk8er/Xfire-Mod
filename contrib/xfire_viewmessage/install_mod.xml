@@ -17,13 +17,21 @@
 				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
 			</author>
 		</author-group>
-		<mod-version>1.0.7</mod-version>
+		<mod-version>1.0.8</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>120</time>
-			<target-version>3.0.11</target-version>
+			<target-version>3.0.12</target-version>
 		</installation>
 		<history>
+			<entry>
+				<date>2013-09-28</date>
+				<rev-version>1.0.8</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Updated for phpBB 3.0.12]]></change>
+					<change><![CDATA[fixed download link]]></change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2012-11-28</date>
 				<rev-version>1.0.7</rev-version>
@@ -121,7 +129,7 @@
 			<edit>
 				<comment lang="en"><![CDATA[around line 79]]></comment>
 				<find><![CDATA[			<!-- IF U_MSN --><li class="msnm-icon"><a href="{U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><span>{L_MSNM}</span></a></li><!-- ENDIF -->]]></find>
-				<action type="after-add"><![CDATA[			<!-- IF U_XFIRE --><li class="xfire-icon"><a href="http://profile.xfire.com/{U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
+				<action type="after-add"><![CDATA[			<!-- IF U_XFIRE --><li class="xfire-icon"><a href="http://www.xfire.com/profile/{U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
 			</edit>
 		</open>
 		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>

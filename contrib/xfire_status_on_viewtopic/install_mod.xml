@@ -17,13 +17,21 @@
 				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
 			</author>
 		</author-group>
-		<mod-version>1.0.7</mod-version>
+		<mod-version>1.0.8</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>120</time>
-			<target-version>3.0.11</target-version>
+			<target-version>3.0.12</target-version>
 		</installation>
 		<history>
+			<entry>
+				<date>2013-09-28</date>
+				<rev-version>1.0.8</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Updated for phpBB 3.0.12]]></change>
+					<change><![CDATA[fixed download link]]></change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2012-11-28</date>
 				<rev-version>1.0.7</rev-version>
@@ -97,7 +105,7 @@
 			<edit>
 				<comment lang="en"><![CDATA[around line 27]]></comment>
 				<find><![CDATA[			<!-- IF postrow.RANK_TITLE or postrow.RANK_IMG --><dd>{postrow.RANK_TITLE}<!-- IF postrow.RANK_TITLE and postrow.RANK_IMG --><br /><!-- ENDIF -->{postrow.RANK_IMG}</dd><!-- ENDIF -->]]></find>
-				<action type="after-add"><![CDATA[			<!-- IF postrow.U_XFIRE --><br /><dd><a href="http://profile.xfire.com/{postrow.U_XFIRE}" onclick="window.open(this.href); return false;"><img src="http://miniprofile.xfire.com/bg/sh/type/3/{postrow.U_XFIRE}.png" width="149" height="29" alt="{L_XFIRE}: {postrow.U_XFIRE}" title="{L_XFIRE}: {postrow.U_XFIRE}" /></a></dd><!-- ENDIF -->]]></action>
+				<action type="after-add"><![CDATA[			<!-- IF postrow.U_XFIRE --><br /><dd><a href="http://www.xfire.com/profile/{postrow.U_XFIRE}" onclick="window.open(this.href); return false;"><img src="http://miniprofile.xfire.com/bg/sh/type/3/{postrow.U_XFIRE}.png" width="149" height="29" alt="{L_XFIRE}: {postrow.U_XFIRE}" title="{L_XFIRE}: {postrow.U_XFIRE}" /></a></dd><!-- ENDIF -->]]></action>
 			</edit>
 		</open>
 		<open src="styles/subsilver2/template/viewtopic_body.html">
@@ -109,7 +117,7 @@
 				</tr>
 			<!-- ENDIF -->
 				</table>]]></find>
-				<action type="after-add"><![CDATA[			<!-- IF postrow.U_XFIRE --><br />&nbsp;<a href="http://profile.xfire.com/{postrow.U_XFIRE}" onclick="window.open(this.href); return false;"><img src="http://miniprofile.xfire.com/bg/sh/type/3/{postrow.U_XFIRE}.png" width="149" height="29" alt="{L_XFIRE}: {postrow.U_XFIRE}" title="{L_XFIRE}: {postrow.U_XFIRE}" /></a><!-- ENDIF -->]]></action>
+				<action type="after-add"><![CDATA[			<!-- IF postrow.U_XFIRE --><br />&nbsp;<a href="http://www.xfire.com/profile/{postrow.U_XFIRE}" onclick="window.open(this.href); return false;"><img src="http://miniprofile.xfire.com/bg/sh/type/3/{postrow.U_XFIRE}.png" width="149" height="29" alt="{L_XFIRE}: {postrow.U_XFIRE}" title="{L_XFIRE}: {postrow.U_XFIRE}" /></a><!-- ENDIF -->]]></action>
 			</edit>
 		</open>
 		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>

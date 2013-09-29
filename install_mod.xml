@@ -28,13 +28,21 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 				</contributions-group>
 			</author>
 		</author-group>
-		<mod-version>1.0.7</mod-version>
+		<mod-version>1.0.8</mod-version>
 		<installation>
 			<level>easy</level>
 			<time>1200</time>
-			<target-version>3.0.11</target-version>
+			<target-version>3.0.12</target-version>
 		</installation>
 		<history>
+			<entry>
+				<date>2013-09-28</date>
+				<rev-version>1.0.8</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Updated for phpBB 3.0.12]]></change>
+					<change><![CDATA[fixed download link]]></change>
+				</changelog>
+			</entry>
 			<entry>
 				<date>2012-11-28</date>
 				<rev-version>1.0.7</rev-version>
@@ -105,6 +113,7 @@ Also give thanks to Rmcgirr83, vectra-mods, and michaelo for helping me get it r
 			<link type="contrib" href="./contrib/update_104_to_105/install_mod.xml" lang="en">Update 1.0.4 to 1.0.5</link>
 			<link type="contrib" href="./contrib/update_105_to_106/install_mod.xml" lang="en">Update 1.0.5 to 1.0.6</link>
 			<link type="contrib" href="./contrib/update_106_to_107/install_mod.xml" lang="en">Update 1.0.6 to 1.0.7</link>
+			<link type="contrib" href="./contrib/update_107_to_108/install_mod.xml" lang="en">Update 1.0.7 to 1.0.8</link>
 			<link type="contrib" href="./contrib/required_by_registration/install_mod.xml" lang="en">Required By Registration</link>
 			<link type="contrib" href="./contrib/xfire_status_on_viewmessage/install_mod.xml" lang="en">Xfire Mod Status On Viewmessage</link>
 			<link type="contrib" href="./contrib/xfire_status_on_viewtopic/install_mod.xml" lang="en">Xfire Mod Status On Viewtopic</link>
@@ -336,7 +345,7 @@ $user->add_lang('mods/xfire');
 	<div class="inner"><span class="corners-top"><span></span></span>
 		<h3>{L_XFIRE}</h3>
 		<div class="postbody">
-			<div class="xfire" style="border-top:none; margin-top: 0;"><a href="http://profile.xfire.com/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> | <a href="http://www.xfire.com/download/">{L_DOWNLOAD_XFIRE}</a></div></div>
+			<div class="xfire" style="border-top: none; margin-top: 0;"><a href="http://www.xfire.com/profile/{XFIRE}"><img src="http://miniprofile.xfire.com/bg/{XFIRE_STYLE}/type/0/{XFIRE}.png" width="440" height="111" alt="" /></a><br /><div style="font-size: 1em;"><a href="xfire:add_friend?user={XFIRE}">{L_ADD_XFIRE_USER}</a> | <a href="http://www.xfire.com/">{L_DOWNLOAD_XFIRE}</a></div></div>
 		</div>
 	<span class="corners-bottom"><span></span></span></div>
 </div>
@@ -376,7 +385,7 @@ $user->add_lang('mods/xfire');
 			</edit>
 			<edit>
 				<find><![CDATA[					<!-- IF postrow.U_MSN --><li class="msnm-icon"><a href="{postrow.U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><span>{L_MSNM}</span></a></li><!-- ENDIF -->]]></find>
-				<action type="after-add"><![CDATA[					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://profile.xfire.com/{postrow.U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
+				<action type="after-add"><![CDATA[					<!-- IF postrow.U_XFIRE --><li class="xfire-icon"><a href="http://www.xfire.com/profile/{postrow.U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
 			</edit>
 		</open>
 		<open src="styles/prosilver/theme/buttons.css">
