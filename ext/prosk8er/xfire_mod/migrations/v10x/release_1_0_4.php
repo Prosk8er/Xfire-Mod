@@ -24,7 +24,7 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 	public function update_data()
 	{
 		return array(
-			'add_columns'        => array(
+			'add_columns' => array(
 				$this->table_prefix . 'users' => array(
 					'user_xfire' => array('VCHAR', ''),
 					'user_xfire_style' => array('BOOL', '6'),
