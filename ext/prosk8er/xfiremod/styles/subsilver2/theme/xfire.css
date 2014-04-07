@@ -1,0 +1,7 @@
+/* stylesheet.css */
+/* EN Language Pack */
+.imageset.phpbb_xfire-icon, .imageset.icon_contact_xfire {
+	background-image: url("./en/icon_contact_xfire.gif");
+	padding-left: 72px;
+	padding-top: 20px;
+}
