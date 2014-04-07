@@ -34,12 +34,4 @@ $lang = array_merge($lang, array(
 	'XFIRE_FANTASY'         => 'Fantasy',
 	'XFIRE_WOW'             => 'World Of Warcraft',
 	'XFIRE_DEFAULT'         => 'Default',
-
-	'XFIRE_MOD'			=> 'Xfire Mod',
-	'INSTALL_XFIRE_MOD'		=> 'Install Xfire Mod',
-	'INSTALL_XFIRE_MOD_CONFIRM'	=> 'Are you sure you want to install the Xfire Mod?',
-	'UPDATE_XFIRE_MOD'		=> 'Update Xfire Mod',
-	'UPDATE_XFIRE_MOD_CONFIRM'	=> 'Are you sure you want to update the Xfire Mod?',
-	'UNINSTALL_XFIRE_MOD'		=> 'Uninstall Xfire Mod',
-	'UNINSTALL_XFIRE_MOD_CONFIRM'	=> 'Are you sure you want to uninstall the Xfire Mod?',
 ));
