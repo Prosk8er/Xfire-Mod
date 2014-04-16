@@ -7,7 +7,7 @@
 *
 */
 
-namespace prosk8er\xfiremod\migrations\v11x;
+namespace prosk8er\xfirecpf\migrations\v11x;
 
 class release_1_1_0 extends \phpbb\db\migration\migration
 {
@@ -18,7 +18,7 @@ class release_1_1_0 extends \phpbb\db\migration\migration
 
 	static public function depends_on()
 	{
-		return array('\prosk8er\xfiremod\migrations\v10x\release_1_0_8');
+		return array('\prosk8er\xfirecpf\migrations\v10x\release_1_0_8');
 	}
 
 	public function update_data()

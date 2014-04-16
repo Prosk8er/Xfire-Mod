@@ -4,7 +4,7 @@
 // however you can override the default methods and add custom
 // installation logic
 
-namespace prosk8er\xfiremod;
+namespace prosk8er\xfirecpf;
 
 class ext extends \phpbb\extension\base
 {

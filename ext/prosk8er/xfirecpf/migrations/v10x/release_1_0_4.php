@@ -7,7 +7,7 @@
 *
 */
 
-namespace prosk8er\xfiremod\migrations\v10x;
+namespace prosk8er\xfirecpf\migrations\v10x;
 
 class release_1_0_4 extends \phpbb\db\migration\migration
 {
