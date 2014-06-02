@@ -9,11 +9,11 @@
 
 namespace prosk8er\xfirecpf\migrations\v10x;
 
-class release_1_0_4 extends \phpbb\db\migration\migration
+class release_1_0_0 extends \phpbb\db\migration\migration
 {
 	public function effectively_installed()
 	{
-		return isset($this->config['xfire_mod_version']) && version_compare($this->config['xfire_mod_version'], '1.0.4', '>=');
+		return isset($this->config['xfire_cpf_version']) && version_compare($this->config['xfire_cpf_version'], '1.0.0', '>=');
 	}
 
 	static public function depends_on()
@@ -31,7 +31,7 @@ class release_1_0_4 extends \phpbb\db\migration\migration
 				),
 			),
 
-			array('config.add', array('xfire_mod_version', '1.0.4')),
+			array('config.add', array('xfire_cpf_version', '1.0.0')),
 		);
 	}
 }

@@ -3,7 +3,7 @@
 	"type": "phpbb-extension",
 	"description": "Displays a small image of users that have entered in there XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).",
 	"homepage": "https://github.com/Prosk8er/Xfire-Mod",
-	"version": "1.1.0",
+	"version": "1.0.0",
 	"time": "2013-03-16",
 	"license": "GPL-2.0",
 	"authors": [
