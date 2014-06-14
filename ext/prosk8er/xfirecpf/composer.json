@@ -19,6 +19,6 @@
 		"phpbb/phpbb": "3.1.*@dev"
 	},
 	"extra": {
-		"display-name": "phpBB 3.1 Xfire CPF Extension"
+		"display-name": "Xfire CPF Extension"
 	}
 }
