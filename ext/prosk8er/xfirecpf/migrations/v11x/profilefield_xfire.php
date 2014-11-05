@@ -14,7 +14,15 @@ class profilefield_xfire extends \phpbb\db\migration\profilefield_base_migration
 	static public function depends_on()
 	{
 		return array(
-			'\phpbb\db\migration\data\v310\profilefield_website_cleanup',
+			'\phpbb\db\migration\data\v310\profilefield_types',
+			'\phpbb\db\migration\data\v310\profilefield_show_novalue',
+		);
+	}
+
+	public function update_data()
+	{
+		return array(
+			array('custom', array(array($this, 'create_custom_field'))),
 		);
 	}
 

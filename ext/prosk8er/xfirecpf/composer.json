@@ -16,9 +16,12 @@
 	],
 	"require": {
 		"php": ">=5.3.3",
-		"phpbb/phpbb": "3.1.*@dev"
+		"composer/installers": "~1.0"
 	},
 	"extra": {
-		"display-name": "Xfire CPF Extension"
+		"display-name": "Xfire CPF Extension",
+		"soft-require" : {
+			"phpbb/phpbb": ">=3.1.0-RC2,<3.2.*@dev"
+		}
 	}
 }
