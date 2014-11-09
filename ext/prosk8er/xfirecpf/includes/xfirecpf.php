@@ -1,9 +1,10 @@
 <?php
 /**
 *
-* @package Xfire CPF
-* @copyright (c) 2014 Prosk8er ( http://www.gotskillslounge.com/ )
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* XFire CPF extension for the phpBB Forum Software package.
+*
+* @copyright (c) 2014 Prosk8er <http://www.gotskillslounge.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 

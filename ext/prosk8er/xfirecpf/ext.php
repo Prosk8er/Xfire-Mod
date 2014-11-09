@@ -1,8 +1,12 @@
 <?php
-
-// this file is not really needed, when empty it can be omitted
-// however you can override the default methods and add custom
-// installation logic
+/**
+*
+* XFire CPF extension for the phpBB Forum Software package.
+*
+* @copyright (c) 2014 Prosk8er <http://www.gotskillslounge.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
+*
+*/
 
 namespace prosk8er\xfirecpf;
 

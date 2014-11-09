@@ -1,13 +1,14 @@
 <?php
 /**
 *
-* @package migration
-* @copyright (c) 2014 phpBB Group
-* @license http://opensource.org/licenses/gpl-2.0.php GNU General Public License v2
+* XFire CPF extension for the phpBB Forum Software package.
+*
+* @copyright (c) 2014 Prosk8er <http://www.gotskillslounge.com>
+* @license GNU General Public License, version 2 (GPL-2.0)
 *
 */
 
-namespace phpbb\db\migration\data\v310;
+namespace prosk8er\xfirecpf\migrations\v11x;
 
 class profilefield_xfire_cleanup extends \phpbb\db\migration\migration
 {
@@ -19,7 +20,7 @@ class profilefield_xfire_cleanup extends \phpbb\db\migration\migration
 	static public function depends_on()
 	{
 		return array(
-			'\phpbb\db\migration\data\v310\profilefield_xfire',
+			'\prosk8er\steamcpf\migrations\v11x\profilefield_xfire',
 		);
 	}
 
