@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?xml-stylesheet type="text/xsl" href="modx.prosilver.en.xsl"?>
+<!--NOTICE: Please open this file in your web browser. If presented with a security warning, you may safely tell it to allow the blocked content.-->
+<!--For security purposes, please check: http://www.phpbb.com/mods/ for the latest version of this MOD.\nAlthough MODs are checked before being allowed in the MODs Database there is no guarantee that there are no security problems within the MOD.\nNo support will be given for MODs not found within the MODs Database which can be found at http://www.phpbb.com/mods/-->
+<mod xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://www.phpbb.com/mods/xml/modx-1.2.6.xsd">
+	<header>
+		<meta name="generator" content="MODX file generated with PP MODX Creator by tumba25 (online version)"/>
+		<license><![CDATA[http://opensource.org/licenses/gpl-license.php GNU General Public License v2]]></license>
+		<title lang="en"><![CDATA[XFire Mod On Viewmessage]]></title>
+		<description lang="en"><![CDATA[Displays a small image of users that have entered in an XFire account in viewtopic (when clicked on will take a user to the members XFire Profile) as well as their profile (XFire mini-profile found just above signature panel, when clicked on will take the member to that users xfire profile).]]></description>
+		<author-notes lang="en"><![CDATA[Works on prosilver and prosilver based styles.]]></author-notes>
+		<author-group>
+			<author>
+				<realname><![CDATA[Tyler]]></realname>
+				<username><![CDATA[Prosk8er]]></username>
+				<homepage><![CDATA[http://gotskillslounge.com]]></homepage>
+				<email><![CDATA[prosk8er@gotskillslounge.com]]></email>
+			</author>
+		</author-group>
+		<mod-version>1.0.8</mod-version>
+		<installation>
+			<level>easy</level>
+			<time>120</time>
+			<target-version>3.0.12</target-version>
+		</installation>
+		<history>
+			<entry>
+				<date>2013-09-28</date>
+				<rev-version>1.0.8</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Updated for phpBB 3.0.12]]></change>
+					<change><![CDATA[fixed download link]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2012-11-28</date>
+				<rev-version>1.0.7</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[added acp styles lang var and updated umil]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2012-06-27</date>
+				<rev-version>1.0.6</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[couple small changes]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2012-05-02</date>
+				<rev-version>1.0.5</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Fixes for mod validation]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2011-08-26</date>
+				<rev-version>1.0.4</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[got rid of old image added prosilver and subsilver2 style images]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-03-02</date>
+				<rev-version>1.0.3</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added db_update file, no more phpmyadmin.  Added FAQ entry.  MODx 1.2.2 HTML changes]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-14</date>
+				<rev-version>1.0.2</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Tightened up code for ucp_profile.php and html file]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-08</date>
+				<rev-version>1.0.1</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Added abiity to select styling of mini-profile for xfire]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2009-01-09</date>
+				<rev-version>1.0.1a</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Fixed image error in viewtopic_body.html]]></change>
+				</changelog>
+			</entry>
+			<entry>
+				<date>2008-12-31</date>
+				<rev-version>1.0.0</rev-version>
+				<changelog lang="en">
+					<change><![CDATA[Initial Release]]></change>
+				</changelog>
+			</entry>
+		</history>
+		<link-group>
+			<link type="parent" href="../../install_mod.xml" lang="en">Main install file</link>
+		</link-group>
+	</header>
+	<action-group>
+		<open src="includes/ucp/ucp_pm_viewmessage.php">
+			<edit>
+				<comment lang="en"><![CDATA[around line 27]]></comment>
+				<find><![CDATA[	$user->add_lang(array('viewtopic', 'memberlist'));]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+	$user->add_lang('mods/xfire');
+// END xfire mod]]></action>
+			</edit>
+			<edit>
+				<comment lang="en"><![CDATA[around line 217]]></comment>
+				<find><![CDATA[		'U_MSN'			=> ($user_info['user_msnm'] && $auth->acl_get('u_sendim')) ? append_sid("{$phpbb_root_path}memberlist.$phpEx", 'mode=contact&amp;action=msnm&amp;u=' . $author_id) : '',]]></find>
+				<action type="after-add"><![CDATA[// BEGIN xfire mod
+		'U_XFIRE'		=> (isset($user_info['user_xfire']) && $auth->acl_get('u_sendim')) ? $user_info['user_xfire'] : '',
+// END xfire mod]]></action>
+			</edit>
+		</open>
+		<open src="styles/prosilver/template/ucp_pm_viewmessage.html">
+			<edit>
+				<comment lang="en"><![CDATA[around line 73]]></comment>
+				<find><![CDATA[		<!-- IF U_PM or U_EMAIL or U_WWW or U_MSN or U_ICQ or U_YIM or U_AIM or U_JABBER]]></find>
+				<inline-edit>
+					<inline-find><![CDATA[U_JABBER]]></inline-find>
+					<inline-action type="after-add"><![CDATA[ or U_XFIRE]]></inline-action>
+				</inline-edit>
+			</edit>
+			<edit>
+				<comment lang="en"><![CDATA[around line 79]]></comment>
+				<find><![CDATA[			<!-- IF U_MSN --><li class="msnm-icon"><a href="{U_MSN}" onclick="popup(this.href, 550, 320); return false;" title="{L_MSNM}"><span>{L_MSNM}</span></a></li><!-- ENDIF -->]]></find>
+				<action type="after-add"><![CDATA[			<!-- IF U_XFIRE --><li class="xfire-icon"><a href="http://www.xfire.com/profile/{U_XFIRE}" title="{L_XFIRE}"><span>{L_XFIRE}</span></a></li><!-- ENDIF -->]]></action>
+			</edit>
+		</open>
+		<diy-instructions lang="en"><![CDATA[Login to your forum as admin, purge the cache, refresh the template, theme and imageset in the ACP.]]></diy-instructions>
+	</action-group>
+</mod>
